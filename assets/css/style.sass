@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Concert+One&family=Roboto&display=swap')
+
+
+html
+    box-sizing: border-box
+    font-size: 10px
+
+*, *:before, *:after
+    box-sizing: inherit
+    padding: 0
+    margin: 0
+    // border: 1px red solid
+
+body
+
+
+
+
+#scroll-container
+    grid-area: content
+
+.scroll-slide
+    min-height: 100vh
+
+
+/* Navigation */
+#navbar
+    display: grid
+    grid-template: 50px / auto
+    position: sticky
+    top: 0
+    bottom: 0
+    background-color: whitesmoke
+
+    ul
+        display: flex
+        flex-direction: row
+        justify-content: flex-end
+
+        li
+            list-style-type: none
+            margin-right: 4rem
+
+            a
+                font-family: 'Concert One', cursive
+                font-size: 3rem
+                text-decoration: none
+                color: #000
+
+                &:hover
+                    color: #FF4848
+
+
+@media only screen and (max-width: 720px)
+    #navbar
+
+        ul
+            justify-content: center
+
+            li
+                margin: 1rem
+
+                a
+                    font-size: 2.1rem
+    
+
+
+
+
+/* TODO: Finish using JS in v2
+
+    #sidenav
+        grid-area: sidenav
+        position: fixed
+        top: 50%
+        left: 2.5%
+
+        display: grid
+        grid-template: 1fr / 5, 1fr 
+
+        ul
+            li
+                list-style-type: none
+
+                a
+                    font-size: 4rem
+                    text-decoration: none
+                    color: #000
+
+                    &:hover
+                        color: #FF4848
+
+/* end of Navigation */
+
+/* Section: Home */
+#typewriter
+    font-family: 'Roboto', sans-serif
+    font-size: 4rem
+    word-wrap: anywhere
+    max-width: 100%
+    position: absolute
+    top: 20%
+    left: 7%
+
+
+@media only screen and (max-width: 720px)
+    #typewriter
+        font-size: 3rem
+
+
+/* end of Section One*/
