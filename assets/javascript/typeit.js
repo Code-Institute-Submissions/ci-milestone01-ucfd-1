@@ -1,27 +1,11 @@
-// new TypeIt("#typewriter", {
-//     strings: ["Hey there!", "My name is Jakub and I'm a <strong>Full Stack Developer</strong>.", "Let's make something awesome!"],
-//     speed: 95,
-//     loop: false,
-//     cursorChar: "_"
-
-
-// }).go();
-
-
 new TypeIt("#typewriter", {
-    
+    strings: ["I'm Jakub.", "A <strong>full stack</strong> developer."],
     loop: true,
     cursorChar: "|",
-    lifeLike: true, 
+    lifeLike: true,
 })
-    .type("Hello!")
-    .pause(500)
-    .delete(11)
-    .pause(1000)
-    .type("My name is Jakub and I'm a <strong>Full Stack Developer</strong>.")
     .break()
-    .break()
-    .pause(1100)
+    .pause(1500)
     .type("Let's make something awesome!")
-    .pause(4000)
+    .pause(10000)
     .go();

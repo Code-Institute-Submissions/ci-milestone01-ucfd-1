@@ -1,7 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Concert+One&family=Roboto&display=swap");
+/*Responsive Breakpoints*/
 html {
   box-sizing: border-box;
   font-size: 10px;
+  scroll-snap-type: y mandatory;
 }
 
 *, *:before, *:after {
@@ -10,12 +12,10 @@ html {
   margin: 0;
 }
 
-#scroll-container {
-  grid-area: content;
-}
-
 .scroll-slide {
   min-height: 100vh;
+  padding: 10rem 0 0;
+  scroll-snap-align: start;
 }
 
 /* Navigation */
@@ -25,7 +25,7 @@ html {
   position: sticky;
   top: 0;
   bottom: 0;
-  background-color: whitesmoke;
+  /* Mobile */
 }
 #navbar ul {
   display: flex;
@@ -34,7 +34,7 @@ html {
 }
 #navbar ul li {
   list-style-type: none;
-  margin-right: 4rem;
+  margin-right: 3rem;
 }
 #navbar ul li a {
   font-family: "Concert One", cursive;
@@ -45,8 +45,7 @@ html {
 #navbar ul li a:hover {
   color: #FF4848;
 }
-
-@media only screen and (max-width: 720px) {
+@media only screen and (max-width: 360px) {
   #navbar ul {
     justify-content: center;
   }
@@ -57,6 +56,7 @@ html {
     font-size: 2.1rem;
   }
 }
+
 /* TODO: Finish using JS in v2
  *
  *  #sidenav
@@ -79,23 +79,197 @@ html {
  *
  *                  &:hover
  *                      color: #FF4848 */
-/* end of Navigation */
-/* Section: Home */
+/* Home */
 #typewriter {
   font-family: "Roboto", sans-serif;
-  font-size: 4rem;
+  font-size: 5rem;
   word-wrap: anywhere;
   max-width: 100%;
   position: absolute;
   top: 20%;
   left: 7%;
 }
-
 @media only screen and (max-width: 720px) {
   #typewriter {
     font-size: 3rem;
   }
 }
-/* end of Section One*/
+
+/* About Me */
+#about {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: max-content;
+  grid-template-areas: "intro intro intro" "services services services" "skills skills skills" "message message message";
+  grid-row-gap: 4rem;
+  padding: 10rem 7% 0;
+  /* Mobile */
+  /* Tablet */
+}
+#about .header {
+  color: #1e836c;
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+#about .sub-header {
+  color: #45b29a;
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+#about p {
+  font-size: 2rem;
+}
+#about #about-introduction {
+  grid-area: intro;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+#about #about-services {
+  grid-area: services;
+  display: flex;
+  flex-direction: column;
+  max-width: 120rem;
+  margin: auto auto;
+}
+#about #about-services .card {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-bottom: 5rem;
+  box-shadow: -1.2rem -1.2rem -1.2rem 0 rgba(255, 255, 255, 0.4);
+}
+#about #about-services .one {
+  justify-items: center;
+}
+#about #about-services .one .media {
+  width: 15rem;
+  order: 1;
+}
+#about #about-services .one .media img {
+  max-width: 100%;
+}
+#about #about-services .one .info {
+  width: 100%;
+  grid-column: span 2;
+  order: 2;
+}
+#about #about-services .two {
+  justify-items: center;
+}
+#about #about-services .two .media {
+  width: 15rem;
+  order: 2;
+}
+#about #about-services .two .media img {
+  max-width: 100%;
+}
+#about #about-services .two .info {
+  width: 100%;
+  grid-column: span 2;
+  order: 1;
+}
+#about #about-skills {
+  grid-area: skills;
+  text-align: center;
+}
+#about #about-skills .skills .icon {
+  display: inline-block;
+}
+#about #about-skills .skills .icon img {
+  width: 15rem;
+}
+#about #about-message {
+  grid-area: message;
+  text-align: center;
+}
+#about #about-message p {
+  margin-bottom: 3rem;
+}
+#about #about-message button {
+  width: 20rem;
+  height: 5rem;
+  background-color: #45b29a;
+  border-radius: 0.5rem;
+}
+#about #about-message button a {
+  font-size: 2rem;
+  color: #000;
+  text-decoration: none;
+}
+@media only screen and (max-width: 360px) {
+  #about {
+    padding: 8rem 7% 0;
+  }
+  #about .header {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  #about .sub-header {
+    font-size: 1.9rem;
+    margin-bottom: 1rem;
+  }
+  #about p {
+    font-size: 1.6rem;
+  }
+  #about #about-services .card {
+    grid-template-columns: 1fr;
+    text-align: center;
+    margin-bottom: 2.5rem;
+  }
+  #about #about-services .card .media {
+    margin-bottom: 2rem;
+    width: 10rem;
+  }
+  #about #about-services .one .media {
+    order: 1;
+  }
+  #about #about-services .one .info {
+    order: 2;
+  }
+  #about #about-services .two .media {
+    order: 1;
+  }
+  #about #about-services .two .info {
+    order: 2;
+  }
+}
+@media only screen and (max-width: 768px) {
+  #about {
+    padding: 8rem 7% 0;
+  }
+  #about .header {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  #about .sub-header {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  #about p {
+    font-size: 2rem;
+  }
+  #about #about-services .card {
+    grid-template-columns: 1fr;
+    text-align: center;
+    margin-bottom: 2.5rem;
+  }
+  #about #about-services .card .media {
+    margin-bottom: 2rem;
+    width: 10rem;
+  }
+  #about #about-services .one .media {
+    order: 1;
+  }
+  #about #about-services .one .info {
+    order: 2;
+  }
+  #about #about-services .two .media {
+    order: 1;
+  }
+  #about #about-services .two .info {
+    order: 2;
+  }
+}
 
 /*# sourceMappingURL=style.css.map */
