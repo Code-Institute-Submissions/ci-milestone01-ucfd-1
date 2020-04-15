@@ -34,3 +34,8 @@ A brief overview of the technologies I've used for this project.
 
 ## Notes
 I didn't want to rely on js for the initial version of my portfolio project because I know that I will only be assessed on my use of html and css, but after many hours of trying to come up with css hacks or workarounds to get some elements to work the way I wanted them to,  I realized that some things just couldn't be done elegantly and practically without the use of javascript, so compromises had to be made. Once this initial version of the site has been assessed, I'm going to incorporate a javascript sidebar which resembles that in my initial Adobe XD moqup. 
+
+
+## Websites I got inspiration from
+http://seanhalpin.io/
+https://riza-khan.webflow.io/

@@ -2,6 +2,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/5b9136bb21.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Jakub Donovan</title>
 </head>
@@ -41,7 +42,6 @@
             </div>
 
             <div class="sub-section" id="about-services">
-                <h2 class="header">Here's what I can do.</h2>
                 <div class="card one">
                     <div class="media">
                         <img src="assets/media/images/graphic-design.png" alt="animated web-design icon">
@@ -69,64 +69,72 @@
             </div>
 
             <div class="sub-section" id="about-skills">
-                <h2 class="header">I'm an expert at what I do.</h2>
                 <div class="skills">
-                    <div class="icon">
-                        <img src="assets/media/images/html5.png" alt="HTML5 icon">
-                    </div>
-                    <div class="icon">
-                        <img src="assets/media/images/css3.png" alt="CSS3 icon">
-                    </div>
-                    <div class="icon">
-                        <img src="assets/media/images/javascript.png" alt="JavaScript icon">
-                    </div>
-                    <div class="icon">
-                        <img src="assets/media/images/python.png" alt="Python icon">
+                    <div class="skill-icons">
+                        <li><i class="fab fa-html5 html5"></i></li>
+                        <li><i class="fab fa-css3 css3"></i></li>
+                        <li><i class="fab fa-js js"></i></li>
+                        <li><i class="fab fa-python python"></i></li>
                     </div>
                 </div>
+                <h2 class="header">I'm an expert at what I do.</h2>
             </div>
 
             <div class="sub-section" id="about-message">
-                <h2 class="header">I can help!</h2>
-                <h3 class="sub-header">I'm currently available for freelance work.</h3>
-                <p>Shoot me a message and let's get started!</p>
-                <button>
-                    <a href="#contact" class="button">MESSAGE ME</a>
-                </button>
+                <div class="card">
+                    <h2 class="header">I can help!</h2>
+                    <h3 class="sub-header">I'm currently available for freelance work.</h3>
+                    <p>Shoot me a message and let's get started!</p>
+                    <button type="button">
+                        <a href="#contact" class="button">MESSAGE ME</a>
+                    </button>
+                </div>
             </div>
-            
         </section>
 
         <section class="scroll-slide" id="work">
             <h2>Projects</h2>
             <div class="portfolio">
-                <div class="portfolio-item">
+                <div class="project">
                     <div>
-                        <img src="" alt="">
+                        <img src="assets/media/images/myanime.io.png" alt="">
                     </div>
-                    <p>myanime.io</p>
+                    <div class="project-info">
+                        <p>myanime.io</p>
+                        <ul>
+                            <li>HTML5</li>
+                            <li>CSS3</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="portfolio-item">
+                <div class="project">
                     <div>
-                        <img src="" alt="">
+                        <img src="assets/media/images/myanime.io.png" alt="">
                     </div>
-                    <p>myanime.io</p>
+                    <div class="project-info">
+                        <p>exciteme.io</p>
+                        <ul>
+                            <li>HTML</li>
+                            <li>CSS</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="portfolio-item">
-                <div>
-                    <img src="" alt="">
-                </div>
-                <p>notarealproject.com</p>
-                </div>
-
-            </div>
-
-        
         </section>
         
         <section class="scroll-slide" id="contact">
-            <h2>Contact</h2>
-        
+            <form action="" method="post">
+                <h2>Get in touch with me!</h2>
+                <input type="text" id="fname" name="firstname" placeholder="first name">
+                <input type="text" id="lname" name="lastname" placeholder="last name">
+                <br>
+                <input type="email" id="email" name="email" placeholder="email address"> 
+                <br>
+                <input type="text" id="subject" name="subject" placeholder="subject">
+                <br>
+                <input type="textarea" rows="5" id="enquiry" name="enquiry" placeholder="How can I help?">
+                <br>
+                <input type="submit" id="submit" value="Submit">
+            </form>
         </section>
 
         <footer>
