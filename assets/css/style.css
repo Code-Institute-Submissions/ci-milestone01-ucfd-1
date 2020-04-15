@@ -3,6 +3,7 @@
 html {
   box-sizing: border-box;
   font-size: 10px;
+  font-family: "Poppins", sans-serif;
 }
 
 *, *:before, *:after {
@@ -12,13 +13,25 @@ html {
   margin: 0;
 }
 
-/* Navigation */
+#scroll-container {
+  background-color: #F2F4FA;
+}
+
+.scroll-slide {
+  min-height: 100vh;
+  max-width: 85vw;
+  margin: 0 auto;
+  scroll-snap-align: start;
+  overflow: hidden;
+}
+
+/* Sticky Navbar */
 #navbar {
-  display: grid;
-  grid-template: 50px/auto;
   position: sticky;
   top: 0;
   bottom: 0;
+  background-color: #F2F4FA;
+  overflow: hidden;
   /* Mobile */
 }
 #navbar ul {
@@ -28,7 +41,7 @@ html {
 }
 #navbar ul li {
   list-style-type: none;
-  margin-right: 3rem;
+  margin: 1rem;
 }
 #navbar ul li a {
   font-family: "Concert One", cursive;
@@ -39,7 +52,7 @@ html {
 #navbar ul li a:hover {
   color: #272AFE;
 }
-@media only screen and (max-width: 360px) {
+@media only screen and (max-width: 375px) {
   #navbar ul {
     justify-content: center;
   }
@@ -47,45 +60,12 @@ html {
     margin: 1rem;
   }
   #navbar ul li a {
-    font-size: 2.1rem;
+    font-size: 2.4rem;
   }
-}
-
-/* TODO: Finish using JS in v2
- *
- *  #sidenav
- *      grid-area: sidenav
- *      position: fixed
- *      top: 50%
- *      left: 2.5%
- *
- *      display: grid
- *      grid-template: 1fr / 5, 1fr 
- *
- *      ul
- *          li
- *              list-style-type: none
- *
- *              a
- *                  font-size: 4rem
- *                  text-decoration: none
- *                  color: #000
- *
- *                  &:hover
- *                      color: #FF4848 */
-#scroll-container {
-  background-color: #F2F4FA;
-}
-
-.scroll-slide {
-  min-height: 100vh;
-  padding: 10rem 0 0;
-  scroll-snap-align: start;
 }
 
 /* Home */
 #typewriter {
-  font-family: "Roboto", sans-serif;
   font-size: 5rem;
   word-wrap: anywhere;
   max-width: 100%;
@@ -106,7 +86,7 @@ html {
   grid-auto-rows: max-content;
   grid-template-areas: "intro intro intro" "services services services" "skills skills skills" "message message message";
   grid-row-gap: 5rem;
-  padding: 10rem 7% 0;
+  padding-top: 5rem;
   /* Mobile */
   /* Tablet */
 }
@@ -136,6 +116,7 @@ html {
   flex-direction: column;
   max-width: 120rem;
   margin: auto auto;
+  padding: 0 1rem;
 }
 #about #about-services .card {
   display: grid;
@@ -145,6 +126,7 @@ html {
   box-shadow: 5px 5px 5px 0px #d1d9e6, -4px -4px 4px 0px #ffffff;
   padding: 1rem 2rem;
   margin-bottom: 4rem;
+  max-width: 100%;
 }
 #about #about-services .one {
   justify-items: center;
@@ -251,10 +233,7 @@ html {
   box-shadow: 5px 5px 5px 0px #d1d9e6, -4px -4px 4px 0px #ffffff;
   transform: scale(1.05);
 }
-@media only screen and (max-width: 360px) {
-  #about {
-    padding: 8rem 7% 0;
-  }
+@media only screen and (max-width: 375px) {
   #about .header {
     font-size: 2.5rem;
     margin-bottom: 1rem;
@@ -289,9 +268,6 @@ html {
   }
 }
 @media only screen and (max-width: 768px) {
-  #about {
-    padding: 8rem 7% 0;
-  }
   #about .header {
     font-size: 3rem;
     margin-bottom: 1rem;
@@ -332,7 +308,7 @@ html {
   grid-auto-rows: max-content;
   grid-template-areas: "header header header" "portfolio portfolio portfolio";
   margin: 0 auto;
-  width: 86%;
+  padding-top: 5rem;
 }
 #work h2 {
   grid-area: header;
@@ -392,6 +368,7 @@ html {
 #contact {
   width: 86%;
   margin: 0 auto;
+  padding-top: 5rem;
 }
 #contact form {
   width: 100%;
