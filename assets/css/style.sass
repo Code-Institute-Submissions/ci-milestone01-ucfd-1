@@ -1,15 +1,34 @@
 @import url('https://fonts.googleapis.com/css2?family=Concert+One&family=Roboto&display=swap')
 
-/*Responsive Breakpoints*/
-$breakpoint-mobile: 375px
+/* Responsive Breakpoints */
+$breakpoint-mobile: 500px
 $breakpoint-tablet: 768px
+
+
+/* Auto-prefixer mixin */
+@mixin prefix($property, $value, $prefixes: ())
+    @each $prefix in $prefixes
+        #{'-' + $prefix + '-' + $property}: $value
+
+
+
+/* Colours */
+$background: #F2F4FA
+$header: #2E3532
+$sub-header: #054A91
+$button: #19630A
+$html-icon: #DD4B25
+$css-icon: #016DB4
+$js-icon: #EFD81D
+$python-icon: #346D9D
 
 
 html
     box-sizing: border-box
     font-size: 10px
     font-family: 'Poppins', sans-serif
-    // scroll-snap-type: y mandatory
+    scroll-snap-type: y mandatory
+
 
 *, *:before, *:after
     box-sizing: inherit
@@ -19,92 +38,135 @@ html
     // border: 1px red solid
 
 #scroll-container
-    background-color: #F2F4FA
+    background-color: $background
 
 .scroll-slide
     min-height: 100vh
-    max-width: 85vw
-    margin: 0 auto
+    width: 90vw
+    max-width: 110rem
+    margin: auto
     scroll-snap-align: start
     overflow: hidden
 
 .sub-section
 
+.header
+        color: $header
+        font-size: 3.2rem
+        margin-bottom: 1.5rem
+        text-align: center
+    
+.sub-header
+    color: $sub-header
+    font-size: 2.5rem
+    margin-bottom: 1.5rem
 
-/* Sticky Navbar */
+p
+    font-size: 2rem
+
+
+
+/* NAVBAR */
 #navbar
+    display: grid
+    grid-template-columns: 2fr 1fr
+    grid-template-areas: ". nav"
+
     position: sticky
     top: 0
     bottom: 0
     background-color: #F2F4FA
     overflow: hidden
 
+    margin: auto
+    width: 95%
+    padding: 0.5rem 1rem
+    border-radius: 1rem
+    box-shadow: -7px -7px 17px #fff, 7px 7px 17px rgba(70, 70, 70, 0.15)
+
     ul
+        grid-area: nav
         display: flex
         flex-direction: row
-        justify-content: flex-end
+        justify-self: flex-end
+        width: max-content
 
+        border: 2px solid #f7f7f7
+        border-radius: 1rem
+        box-shadow: -7px -7px 17px #fff, 7px 7px 17px rgba(70, 70, 70, 0.15)
+        overflow: hidden
 
         li
             list-style-type: none
-            margin: 1rem
 
             a
-                font-family: 'Concert One', cursive
-                font-size: 3rem
+                display: inline-block
+                font-size: 2.3rem
+                line-height: 3.5rem
                 text-decoration: none
+                padding: 0 2rem
                 color: #001C4A
 
-                &:hover
-                    color: #272AFE
+                &:hover, &:active
+                    background: #15A3FF
+                    color: #ffffff
+                    box-shadow: 5px 5px 5px 0px #d1d9e6, -4px -4px 4px 0px #ffffff
 
-    /* Mobile */
-    @media only screen and (max-width: $breakpoint-mobile)
-        ul
+/* HOME */
+#home
+
+    #typewriter
+        font-size: 5rem
+        word-wrap: anywhere
+        max-width: 100%
+        position: absolute
+        top: 15%
+        left: 7%
+
+    .socialmedia-icons
+        display: flex
+        flex-direction: column
+        justify-content: flex-end
+        width: min-content
+
+        position: absolute
+        right: 0%
+        bottom: 20%
+    
+
+        li
+            display: flex
             justify-content: center
+            justify-items: center
 
-            li
-                margin: 1rem
+            width: 6rem
+            height: 6rem
+            list-style-type: none
+            margin: 1rem
+            border-radius: 50%
+            box-shadow: 5px 5px 5px 0px #d1d9e6, -4px -4px 4px 0px #ffffff
 
-                a
-                    font-size: 2.4rem
+            a
+                margin: auto auto
 
+                i
+                    font-size: 4rem
+                    color: #000000c9
 
-/* Home */
-#typewriter
-    font-size: 5rem
-    word-wrap: anywhere
-    max-width: 100%
-    position: absolute
-    top: 20%
-    left: 7%
+                .fa-github:hover
+                    color: #171515
 
-    @media only screen and (max-width: 720px)
-            font-size: 3rem
+                .fa-linkedin:hover
+                    color: #0076B4
 
-/* About Me */
+/* ABOUT */
 #about
     display: grid
     grid-template-columns: repeat(3,1fr)
     grid-auto-rows: max-content
     grid-template-areas: "intro intro intro""services services services""skills skills skills""message message message"
     grid-row-gap: 5rem
-    padding-top: 5rem
-
-    .header
-        color: #001C4A
-        font-size: 3rem
-        margin-bottom: 1.5rem
-        text-align: center
-    
-    .sub-header
-        color: #272AFE
-        font-size: 2.5rem
-        margin-bottom: 1.5rem
-
-    p
-        font-size: 2rem
-
+    padding-top: 9rem
 
     #about-introduction
         grid-area: intro
@@ -112,12 +174,11 @@ html
         flex-direction: column
         text-align: center
 
-
     #about-services
         grid-area: services
         display: flex
         flex-direction: column
-        max-width: 120rem
+        max-width: 100%
         margin: auto auto
         padding: 0 1rem
 
@@ -165,7 +226,6 @@ html
                 grid-column: span 4
                 order: 1
 
-
     #about-skills
         grid-area: skills
         margin: 0 auto
@@ -176,38 +236,39 @@ html
             
             .skill-icons
                 display: flex
+                flex-wrap: wrap
+                justify-content: center
 
                 li
                     display: flex
                     justify-content: center
-                    
 
                     list-style-type: none
-                    background: #F2F4FA
+                    background: $background
                     height: 11rem
                     width: 11rem
                     border-radius: 50%
                     box-shadow: inset 5px 5px 5px 0px #d1d9e6, inset -4px -4px 4px 0px #ffffff
-                    margin: 0 2rem
+                    margin: 1rem 2rem
 
                     i
                         align-self: center
                         font-size: 6rem
 
                     .html5:hover
-                        color: #DD4B25
+                        color: $html-icon
                         transform: scale(1.2)
 
                     .css3:hover
-                        color: #016DB4
+                        color: $css-icon
                         transform: scale(1.2)
 
                     .js:hover
-                        color: #EFD81D
+                        color: $js-icon
                         transform: scale(1.2)
 
                     .python:hover
-                        color: #346D9D
+                        color: $python-icon
                         transform: scale(1.2)
 
     #about-message
@@ -215,49 +276,35 @@ html
         text-align: center
 
         .card
+            width: 90%
             padding: 2rem
-            background-color: #F2F4FA
-            width: 80%
-            margin: 0 auto
+            background-color: $background
+            margin: 0 auto 0.5rem
 
             border-radius: 2%
             box-shadow: 5px 5px 5px 0px #d1d9e6, -4px -4px 4px 0px #ffffff
             
-            h2
 
             p
                 margin-bottom: 3rem
 
             button
-                width: 25rem
+                width: 20rem
                 height: 5rem
                 border-radius: 1.2rem
-                background: #fefffe
+                background: $background
                 box-shadow: 5px 5px 5px 0px #d1d9e6, -4px -4px 4px 0px #ffffff
                 
                 a
                     font-size: 2rem
                     font-weight: bold
-                    color: #272AFE
+                    color: $button
                     text-decoration: none
 
                 &:hover
                     box-shadow: 5px 5px 5px 0px #d1d9e6, -4px -4px 4px 0px #ffffff
                     transform: scale(1.05)
 
-    /* Mobile */
-    @media only screen and (max-width: $breakpoint-mobile)
-
-        .header
-            font-size: 2.5rem
-            margin-bottom: 1rem
-
-        .sub-header
-            font-size: 1.9rem
-            margin-bottom: 1rem
-
-        p
-            font-size: 1.6rem
 
         #about-services
             .card
@@ -283,142 +330,238 @@ html
                 .info
                     order: 2
 
-
-    /* Tablet */
-    @media only screen and (max-width: $breakpoint-tablet)
-
-        .header
-            font-size: 3rem
-            margin-bottom: 1rem
-
-        .sub-header
-            font-size: 2.5rem
-            margin-bottom: 1rem
-
-        p
-            font-size: 2rem
-
-        #about-services
-            .card
-                grid-template-columns: 1fr
-                text-align: center
-                margin-bottom: 2.5rem
-
-                .media
-                    margin-bottom: 2rem
-                    width: 10rem
-
-            .one
-                    .media
-                        order: 1
-                    
-                    .info
-                        order: 2
-
-            .two
-                .media
-                    order: 1
-                
-                .info
-                    order: 2
-
-
+/* WORK */
 #work
-    display: grid
-    grid-template-columns: repeat(3,1fr)
-    grid-auto-rows: max-content
-    grid-template-areas: "header header header" "portfolio portfolio portfolio"
-    margin: 0 auto
-    padding-top: 5rem
-
-    h2
-        grid-area: header
-        font-family: 'Poppins', sans-serif
-        font-size: 6rem
-        color: #151617
-        margin-bottom: 3rem
+    padding: 9rem 0 0
 
     .portfolio
-        grid-area: portfolio
+        margin: 0 auto
 
         .project
             display: flex
-            flex-direction: row
-            text-align: center
+            flex-direction: column
+            width: 86%
             padding: 0.5rem
-            margin: 1rem
-            width: 100%
-
+            margin: 1rem auto
             border-radius: 1rem
-            background: #e0e5eb
             box-shadow: 5px 5px 5px 0px #d1d9e6, -4px -4px 4px 0px #ffffff
 
-            div
-                max-width: 60%
-                text-align: start
-
+            .project-img
+                margin: 0 auto
+                max-width: 45rem
+                
                 img
-                    max-width: 95%
-                    justify: flex-start
+                    max-width: 100%
+
 
             .project-info
-                width: 100%
-                margin: 1rem auto
+                display: flex
+                flex-direction: column
+                margin: 0 auto
 
-                p
+                width: 86%
+                text-align: center
+                padding: 2.5rem 1rem 1rem 
+
+                .project-info-title
                     font-size: 2.5rem
-                    margin: 1rem auto
-                
-                ul
+                    margin: auto
+                    padding: 0 0 1.5rem
+
+                .project-info-description
+                    font-size: 1.8rem
+                    padding: 0 0 1.5rem
+
+                .project-info-languages
                     display: flex
                     flex-direction: row
-                    list-style-type: none
-                    justify-content: center
-                    border: 2px solid yellow
                     width: min-content
                     margin: 0 auto
-                    background-color: yellow
-                    border-radius: 1rem
-                    background: #e0e5eb
-                    box-shadow: 5px 5px 5px 0px #d1d9e6 inset, -4px -4px 4px 0px #ffffff inset
+                    list-style-type: none
 
                     li
+                        border-radius: 0.5rem
                         padding: 1rem
-                        font-size: 2rem
+                        margin: 0.5rem
+                        font-size: 1.5rem
+                        line-height: 1.5rem
+                        box-shadow: 5px 5px 5px 0px #D1D9E6, -4px -4px 4px 0px #ffffff
 
+                    .html5
+                        color: $html-icon
 
-#contact
+                    .css3 
+                        color: $css-icon
+
+/* CONTACT */
+#scroll-container #contact
+    min-height: max-content
     width: 86%
     margin: 0 auto
-    padding-top: 5rem
+    padding: 8rem 0.4rem
     
-
-    form
-        width: 100%
-        margin: 0 auto
-        padding: 1rem
+    .form-container
+        max-width: 80rem
         border-radius: 2%
         box-shadow: 5px 5px 5px 0px #d1d9e6, -4px -4px 4px 0px #ffffff
+        margin: 0 auto
+
+    form
+        display: flex
+        flex-wrap: wrap
+        overflow: hidden
+        padding: 1rem
         
         h2
             font-size: 3rem
             padding: 2rem
 
         input
-            width: 40%
-            font-size: 2rem
-            padding: 0.7rem
-            margin: 0.5rem
-            border-radius: 0.6rem
+            font-size: 1.8rem
+            padding: 1rem
+            margin: 0.4rem 0.4rem
             background: #F2F4FA
+            border-radius: 0.6rem
             box-shadow: inset 5px 5px 5px 0px #d1d9e6, inset -4px -4px 4px 0px #ffffff
 
-        #email, #subject, #enquiry
-            width: 82%
+        #name, #email
+            min-width: 48.8%
+
+        #subject, #message
+            min-width: 100%
 
         #submit
+            width: 30%
             box-shadow: 5px 5px 5px 0px #d1d9e6, -4px -4px 4px 0px #ffffff
-            
             &:hover
                 transform: scale(1.05)
 
+/* FOOTER */
+footer
+    display: flex
+    flex-direction: column
+    text-align: center
+    background: whitesmoke
+
+
+    .socialmedia-icons
+        display: flex
+        flex-direction: row
+        justify-content: center
+        order: 1
+
+        li
+            display: flex
+            justify-content: center
+            justify-items: center
+
+            width: 4rem
+            height: 4rem
+            list-style-type: none
+            margin: 1rem
+            border-radius: 20%
+            box-shadow: 5px 5px 5px 0px #d1d9e6, -4px -4px 4px 0px #ffffff
+
+            a
+                margin: auto auto
+
+                i
+                    font-size: 3rem
+                    color: #000000c9
+
+                .fa-github:hover
+                    color: #171515
+
+                .fa-linkedin:hover
+                    color: #0076B4
+
+    p
+        color: black
+        font-size: 1.5rem
+        font-weight: bold
+        padding: 0.5rem
+        order: 2
+
+
+
+/* MOBILE */
+@media only screen and (max-width: $breakpoint-mobile)
+
+    .header
+        font-size: 2.5rem
+        margin-bottom: 1rem
+
+    .sub-header
+        font-size: 1.9rem
+        margin-bottom: 1rem
+
+    p
+        font-size: 1.6rem
+
+    /* Navbar */
+    #navbar
+        grid-template-columns: 1fr
+        grid-template-areas: "nav"
+
+        ul
+            justify-self: center
+            justify-content: space-between
+            width: 100%
+
+            li
+
+                a
+                    font-size: 2.1rem
+                    padding: 1rem
+
+                    &:hover, &:active
+                        background: #15A3FF
+                        color: #fff
+                        box-shadow: 5px 5px 5px 0px #d1d9e6, -4px -4px 4px 0px #ffffff
+
+    
+    /* HOME */
+    #home
+
+        #typewriter
+                font-size: 3rem
+
+        .socialmedia-icons li
+            width: 5rem
+            height: 5rem
+
+            i
+                font-size: 3rem
+
+
+    /* ABOUT */
+    #about
+
+        #about-services
+            .card
+                grid-template-columns: 1fr
+                text-align: center
+                margin-bottom: 2.5rem
+
+                .media
+                    margin-bottom: 2rem
+                    width: 10rem
+
+            .one
+                    .media
+                        order: 1
+                    
+                    .info
+                        order: 2
+
+            .two
+                .media
+                    order: 1
+                
+                .info
+                    order: 2
+
+    /* CONTACT */
+    #scroll-container #contact
+        form input
+            min-width: 100%

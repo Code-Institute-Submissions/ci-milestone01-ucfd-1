@@ -1,5 +1,5 @@
 new TypeIt("#typewriter", {
-    strings: ["I'm Jakub.", "A <strong>full stack</strong> developer."],
+    strings: ["Hello. I'm Jakub.", "A <strong>full stack</strong> developer."],
     loop: true,
     cursorChar: "|",
     lifeLike: true,
