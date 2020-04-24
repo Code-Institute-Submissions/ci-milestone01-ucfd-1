@@ -82,11 +82,11 @@ p {
   line-height: 3.5rem;
   text-decoration: none;
   padding: 0 2rem;
-  color: #001C4A;
+  color: #333435;
 }
 #navbar ul li a:hover, #navbar ul li a:active {
-  background: #15A3FF;
-  color: #ffffff;
+  font-weight: bold;
+  color: #171515;
   box-shadow: 5px 5px 5px 0px #d1d9e6, -4px -4px 4px 0px #ffffff;
 }
 
@@ -259,6 +259,7 @@ p {
 #about #about-message .card button {
   width: 20rem;
   height: 5rem;
+  border: 2px solid #bdbdbd46;
   border-radius: 1.2rem;
   background: #F2F4FA;
   box-shadow: 5px 5px 5px 0px #d1d9e6, -4px -4px 4px 0px #ffffff;
@@ -398,6 +399,7 @@ p {
 }
 #contact form #submit {
   width: 30%;
+  border: 2px solid #bdbdbd46;
   box-shadow: 5px 5px 5px 0px #d1d9e6, -4px -4px 4px 0px #ffffff;
 }
 #contact form #submit:hover {

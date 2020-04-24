@@ -13,10 +13,16 @@ $breakpoint-tablet: 768px
 
 
 /* Colours */
+$tungsten: #171515
+
 $background: #F2F4FA
 $header: #2E3532
 $sub-header: #054A91
 $button: #19630A
+
+$navitem: #333435
+$navitem-hover: #de901a68
+
 $html-icon: #DD4B25
 $css-icon: #016DB4
 $js-icon: #EFD81D
@@ -28,7 +34,6 @@ html
     font-size: 10px
     font-family: 'Poppins', sans-serif
     scroll-snap-type: y mandatory
-
 
 *, *:before, *:after
     box-sizing: inherit
@@ -90,7 +95,6 @@ p
         flex-direction: row
         justify-self: flex-end
         width: max-content
-
         border: 2px solid #f7f7f7
         border-radius: 1rem
         box-shadow: -7px -7px 17px #fff, 7px 7px 17px rgba(70, 70, 70, 0.15)
@@ -105,11 +109,11 @@ p
                 line-height: 3.5rem
                 text-decoration: none
                 padding: 0 2rem
-                color: #001C4A
+                color: $navitem
 
                 &:hover, &:active
-                    background: #15A3FF
-                    color: #ffffff
+                    font-weight: bold
+                    color: #171515
                     box-shadow: 5px 5px 5px 0px #d1d9e6, -4px -4px 4px 0px #ffffff
 
 /* HOME */
@@ -291,6 +295,7 @@ p
             button
                 width: 20rem
                 height: 5rem
+                border: 2px solid #bdbdbd46
                 border-radius: 1.2rem
                 background: $background
                 box-shadow: 5px 5px 5px 0px #d1d9e6, -4px -4px 4px 0px #ffffff
@@ -434,6 +439,7 @@ p
 
         #submit
             width: 30%
+            border: 2px solid #bdbdbd46
             box-shadow: 5px 5px 5px 0px #d1d9e6, -4px -4px 4px 0px #ffffff
             &:hover
                 transform: scale(1.05)
