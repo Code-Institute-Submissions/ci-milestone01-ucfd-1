@@ -358,49 +358,49 @@ p {
 }
 
 /* CONTACT */
-#scroll-container #contact {
-  min-height: max-content;
+#contact {
   width: 86%;
+  min-height: max-content;
   margin: 0 auto;
   padding: 8rem 0.4rem;
 }
-#scroll-container #contact .form-container {
+#contact .form-container {
   max-width: 80rem;
   border-radius: 2%;
   box-shadow: 5px 5px 5px 0px #d1d9e6, -4px -4px 4px 0px #ffffff;
   margin: 0 auto;
 }
-#scroll-container #contact form {
+#contact form {
   display: flex;
   flex-wrap: wrap;
   overflow: hidden;
   padding: 1rem;
 }
-#scroll-container #contact form h2 {
+#contact form h2 {
   font-size: 3rem;
   padding: 2rem;
 }
-#scroll-container #contact form input {
-  appearance: none;
-  -webkit-appearance: none;
+#contact form input {
   font-size: 1.8rem;
   padding: 1rem;
   margin: 0.4rem 0.4rem;
   background: #F2F4FA;
   border-radius: 0.6rem;
   box-shadow: inset 5px 5px 5px 0px #d1d9e6, inset -4px -4px 4px 0px #ffffff;
+  appearance: none;
+  -webkit-appearance: none;
 }
-#scroll-container #contact form #name, #scroll-container #contact form #email {
-  min-width: 48.8%;
+#contact form #name, #contact form #email {
+  width: 48.8%;
 }
-#scroll-container #contact form #subject, #scroll-container #contact form #message {
-  min-width: 100%;
+#contact form #subject, #contact form #message {
+  width: 100%;
 }
-#scroll-container #contact form #submit {
+#contact form #submit {
   width: 30%;
   box-shadow: 5px 5px 5px 0px #d1d9e6, -4px -4px 4px 0px #ffffff;
 }
-#scroll-container #contact form #submit:hover {
+#contact form #submit:hover {
   transform: scale(1.05);
 }
 
@@ -450,7 +450,7 @@ footer p {
 }
 
 /* MOBILE */
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 450px) {
   .header {
     font-size: 2.5rem;
     margin-bottom: 1rem;
@@ -472,7 +472,7 @@ footer p {
   }
   #navbar ul {
     justify-self: center;
-    justify-content: space-between;
+    justify-content: space-around;
     width: 100%;
   }
   #navbar ul li a {
@@ -521,8 +521,8 @@ footer p {
   }
 
   /* CONTACT */
-  #scroll-container #contact form input {
-    min-width: 100%;
+  #contact form #name, #contact form #email {
+    width: 100%;
   }
 }
 
