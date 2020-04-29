@@ -4,16 +4,13 @@
 $breakpoint-mobile: 450px
 $breakpoint-tablet: 768px
 
-
-/* Auto-prefixer mixin */
-@mixin prefix($property, $value, $prefixes: ())
-    @each $prefix in $prefixes
-        #{'-' + $prefix + '-' + $property}: $value
-
-
-
 /* Colours */
 $tungsten: #171515
+$white: #fff
+$glacier-gray: #d1d9e6
+$eerie-black: #000000c9
+$blue-aster: #0076B4
+$hard-coal: #bdbdbd46
 
 $background: #F2F4FA
 $header: #2E3532
@@ -33,24 +30,27 @@ html
     box-sizing: border-box
     font-size: 10px
     font-family: 'Poppins', sans-serif
-    scroll-snap-type: y mandatory
+    
 
 *, *:before, *:after
     box-sizing: inherit
     padding: 0
     border: 0
     margin: 0
-    // border: 1px red solid
+
 
 #scroll-container
     background-color: $background
+
+section
+    
+
 
 .scroll-slide
     min-height: 100vh
     width: 90vw
     max-width: 110rem
     margin: auto
-    scroll-snap-align: start
     overflow: hidden
 
 .sub-section
@@ -80,14 +80,14 @@ p
     position: sticky
     top: 0
     bottom: 0
-    background-color: #F2F4FA
+    background-color: $background
     overflow: hidden
 
     margin: auto
     width: 95%
     padding: 0.5rem 1rem
     border-radius: 1rem
-    box-shadow: -7px -7px 17px #fff, 7px 7px 17px rgba(70, 70, 70, 0.15)
+    box-shadow: -7px -7px 17px $white, 7px 7px 17px rgba(70, 70, 70, 0.15)
 
     ul
         grid-area: nav
@@ -95,16 +95,16 @@ p
         flex-direction: row
         justify-self: flex-end
         width: max-content
-        border: 2px solid #f7f7f7
+        border: 2px solid $white
         border-radius: 1rem
-        box-shadow: -7px -7px 17px #fff, 7px 7px 17px rgba(70, 70, 70, 0.15)
+        box-shadow: -7px -7px 17px $white, 7px 7px 17px rgba(70, 70, 70, 0.15)
         overflow: hidden
 
         li
             list-style-type: none
 
             a
-                display: inline-block
+                display: flex
                 font-size: 2.3rem
                 line-height: 3.5rem
                 text-decoration: none
@@ -113,8 +113,8 @@ p
 
                 &:hover, &:active
                     font-weight: bold
-                    color: #171515
-                    box-shadow: 5px 5px 5px 0px #d1d9e6, -4px -4px 4px 0px #ffffff
+                    color: $tungsten
+                    box-shadow: 5px 5px 5px 0px $glacier-gray, -4px -4px 4px 0px $white
 
 /* HOME */
 #home
@@ -148,20 +148,20 @@ p
             list-style-type: none
             margin: 1rem
             border-radius: 50%
-            box-shadow: 5px 5px 5px 0px #d1d9e6, -4px -4px 4px 0px #ffffff
+            box-shadow: 5px 5px 5px 0px $glacier-gray, -4px -4px 4px 0px $white
 
             a
                 margin: auto auto
 
                 i
                     font-size: 4rem
-                    color: #000000c9
+                    color: $eerie-black
 
                 .fa-github:hover
-                    color: #171515
+                    color: $tungsten
 
                 .fa-linkedin:hover
-                    color: #0076B4
+                    color: $blue-aster
 
 /* ABOUT */
 #about
@@ -191,8 +191,8 @@ p
             display: grid
             grid-template-columns: repeat(5, 1fr)
             border-radius: 0.6rem
-            background: #F2F4FA
-            box-shadow: 5px 5px 5px 0px #d1d9e6, -4px -4px 4px 0px #ffffff
+            background: $background
+            box-shadow: 5px 5px 5px 0px $glacier-gray, -4px -4px 4px 0px $white
             padding: 1rem 2rem
             margin-bottom: 4rem
             max-width: 100%
@@ -252,7 +252,7 @@ p
                     height: 11rem
                     width: 11rem
                     border-radius: 50%
-                    box-shadow: inset 5px 5px 5px 0px #d1d9e6, inset -4px -4px 4px 0px #ffffff
+                    box-shadow: inset 5px 5px 5px 0px $glacier-gray, inset -4px -4px 4px 0px $white
                     margin: 1rem 2rem
 
                     i
@@ -286,7 +286,7 @@ p
             margin: 0 auto 0.5rem
 
             border-radius: 2%
-            box-shadow: 5px 5px 5px 0px #d1d9e6, -4px -4px 4px 0px #ffffff
+            box-shadow: 5px 5px 5px 0px $glacier-gray, -4px -4px 4px 0px $white
             
 
             p
@@ -295,10 +295,10 @@ p
             button
                 width: 20rem
                 height: 5rem
-                border: 2px solid #bdbdbd46
+                border: 2px solid $hard-coal
                 border-radius: 1.2rem
                 background: $background
-                box-shadow: 5px 5px 5px 0px #d1d9e6, -4px -4px 4px 0px #ffffff
+                box-shadow: 5px 5px 5px 0px $glacier-gray, -4px -4px 4px 0px $white
                 
                 a
                     font-size: 2rem
@@ -307,7 +307,7 @@ p
                     text-decoration: none
 
                 &:hover
-                    box-shadow: 5px 5px 5px 0px #d1d9e6, -4px -4px 4px 0px #ffffff
+                    box-shadow: 5px 5px 5px 0px $glacier-gray, -4px -4px 4px 0px $white
                     transform: scale(1.05)
 
 
@@ -349,7 +349,7 @@ p
             padding: 0.5rem
             margin: 1rem auto
             border-radius: 1rem
-            box-shadow: 5px 5px 5px 0px #d1d9e6, -4px -4px 4px 0px #ffffff
+            box-shadow: 5px 5px 5px 0px $glacier-gray, -4px -4px 4px 0px $white
 
             .project-img
                 margin: 0 auto
@@ -386,11 +386,12 @@ p
 
                     li
                         border-radius: 0.5rem
+                        border: 2px solid $hard-coal
                         padding: 1rem
                         margin: 0.5rem
                         font-size: 1.5rem
                         line-height: 1.5rem
-                        box-shadow: 5px 5px 5px 0px #D1D9E6, -4px -4px 4px 0px #ffffff
+                        box-shadow: 5px 5px 5px 0px $glacier-gray, -4px -4px 4px 0px $white
 
                     .html5
                         color: $html-icon
@@ -408,7 +409,7 @@ p
     .form-container
         max-width: 80rem
         border-radius: 2%
-        box-shadow: 5px 5px 5px 0px #d1d9e6, -4px -4px 4px 0px #ffffff
+        box-shadow: 5px 5px 5px 0px $glacier-gray, -4px -4px 4px 0px $white
         margin: 0 auto
 
     form
@@ -425,9 +426,9 @@ p
             font-size: 1.8rem
             padding: 1rem
             margin: 0.4rem 0.4rem
-            background: #F2F4FA
+            background: $background
             border-radius: 0.6rem
-            box-shadow: inset 5px 5px 5px 0px #d1d9e6, inset -4px -4px 4px 0px #ffffff
+            box-shadow: inset 5px 5px 5px 0px $glacier-gray, inset -4px -4px 4px 0px $white
             appearance: none
             -webkit-appearance: none
 
@@ -439,8 +440,8 @@ p
 
         #submit
             width: 30%
-            border: 2px solid #bdbdbd46
-            box-shadow: 5px 5px 5px 0px #d1d9e6, -4px -4px 4px 0px #ffffff
+            border: 2px solid $hard-coal
+            box-shadow: 5px 5px 5px 0px $glacier-gray, -4px -4px 4px 0px $white
             &:hover
                 transform: scale(1.05)
 
@@ -450,7 +451,6 @@ footer
     flex-direction: column
     text-align: center
     background: whitesmoke
-
 
     .socialmedia-icons
         display: flex
@@ -468,20 +468,20 @@ footer
             list-style-type: none
             margin: 1rem
             border-radius: 20%
-            box-shadow: 5px 5px 5px 0px #d1d9e6, -4px -4px 4px 0px #ffffff
+            box-shadow: 5px 5px 5px 0px $glacier-gray, -4px -4px 4px 0px $white
 
             a
                 margin: auto auto
 
                 i
                     font-size: 3rem
-                    color: #000000c9
+                    color: $eerie-black
 
                 .fa-github:hover
-                    color: #171515
+                    color: $tungsten
 
                 .fa-linkedin:hover
-                    color: #0076B4
+                    color: $blue-aster
 
     p
         color: black
@@ -522,10 +522,6 @@ footer
                     font-size: 2.1rem
                     padding: 1rem
 
-                    &:hover, &:active
-                        background: #15A3FF
-                        color: #fff
-                        box-shadow: 5px 5px 5px 0px #d1d9e6, -4px -4px 4px 0px #ffffff
 
     /* HOME */
     #home
