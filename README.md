@@ -90,6 +90,9 @@ I didn't want to rely on js for the initial version of my portfolio project beca
 - Impement a proximity js based scroll, so that users jump between sections of the site on scroll. [fullpage.js](https://alvarotrigo.com/fullPage/) Also allows functionality needed to take care of the first todo item.
 
 
-## Websites I got inspiration from
+## CREDIT
+[Tim CI](https://github.com/TravelTimN/ci-milestone01-ucfd) - I modelled my README.MD file after his to ensure I hit all the marks.
+
+### Websites I got inspiration from
 http://seanhalpin.io/
 https://riza-khan.webflow.io/
