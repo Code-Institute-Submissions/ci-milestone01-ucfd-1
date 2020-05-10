@@ -75,6 +75,9 @@ A brief overview of the technologies I've used for this project.
 
 
 ## TESTING
+I created a [testing matrix](https://github.com/jakubdonovan/ci-milestone01-ucfd/testing/testmatrix.png) in Numbers and saved it as a .png for visualisation purposes here on GitHub. It outlines various tests to ensure the site renders consistently across many different platforms. 
+
+
 
 
 ## DEPLOYMENT
