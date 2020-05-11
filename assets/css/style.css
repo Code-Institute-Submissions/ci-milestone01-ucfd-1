@@ -346,6 +346,7 @@ p {
   padding: 1rem;
   margin: 0.5rem;
   font-size: 1.5rem;
+  font-weight: bold;
   line-height: 1.5rem;
   box-shadow: 5px 5px 5px 0px #d1d9e6, -4px -4px 4px 0px #fff;
 }
@@ -354,6 +355,9 @@ p {
 }
 #work .portfolio .project .project-info .project-info-languages .css3 {
   color: #016DB4;
+}
+#work .portfolio .project .project-info .project-info-languages .js {
+  color: #EFD81D;
 }
 
 /* CONTACT */

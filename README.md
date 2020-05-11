@@ -3,10 +3,20 @@
 
 I was tasked with building a static website with at least 3 pages. My vision for my first milestone project has always been a personal portfolio website designed to present me in the best light and get me hired. I know that I will have to write one eventually, so this milestone project presents a good opportunity to build the initial version now. 
 
+## USER STORIES
+- As a recruiter, I want to be able to see information about Jakub's skillset so that I can see if he's a good candidate for a job role.
+
+- As a recruiter, I want to be able to get in contact with Jakub so that I can find out if he is interested/available for a project.
+
+- As a recruiter, I want to see Jakub’s GITHUB portfolio.
+
+
 
 ## DESIGN
 ### Wireframe
-I used [Adobe XD](https://www.adobe.com/ie/products/xd.html) to create my initial design. Much of my initial design turned out to be quite impractical without the implementation of many javascript elements, which my project would most likely not have received any extra marks for, so I chose to go with a more minimalistic neumorphic look instead.
+I used [Adobe XD](https://www.adobe.com/ie/products/xd.html) to create my initial design. You can view it here [Wireframe](https://github.com/jakubdonovan/ci-milestone01-ucfd/blob/master/wireframe/wireframe.gif)
+
+Much of my initial design turned out to be quite impractical without the implementation of many javascript elements, which my project would most likely not have received any extra marks for, so I chose to go with a more minimalistic neumorphic look instead.
 
 ### Colour Scheme
 - `$tungsten: #171515`
@@ -75,13 +85,16 @@ A brief overview of the technologies I've used for this project.
 
 
 ## TESTING
-I created a [testing matrix](https://github.com/jakubdonovan/ci-milestone01-ucfd/testing/testmatrix.png) in Numbers and saved it as a .png for visualisation purposes here on GitHub. It outlines various tests to ensure the site renders consistently across many different platforms. 
-
-
+I created a [testing matrix](https://github.com/jakubdonovan/ci-milestone01-ucfd/blob/master/testing/testmatrix.png) in Numbers and saved it as a .png for visualisation purposes here on GitHub. It outlines various tests to ensure the site renders consistently across many different platforms. 
 
 
 ## DEPLOYMENT
 The site has been deployed using GitHub Pages, and is available to view here: https://jakubdonovan.github.io/ci-milestone01-ucfd/
+
+Here's how I did it:
+1. I went to the settins section in my project repository
+2. I scrolled down to the GitHub Pages section, chose the master branch as the source, and enabled github pages for my project. 
+3. I copied the [url](https://jakubdonovan.github.io/ci-milestone01-ucfd/) GitHub has generated for me and added it to the repository.
 
 
 ## Notes
@@ -95,6 +108,8 @@ I didn't want to rely on js for the initial version of my portfolio project beca
 
 ## CREDIT
 [Tim CI](https://github.com/TravelTimN/ci-milestone01-ucfd) - I modelled my README.MD file after his to ensure I hit all the marks.
+
+My mentor, Aaron, helped me come up with user stories.
 
 ### Websites I got inspiration from
 http://seanhalpin.io/
